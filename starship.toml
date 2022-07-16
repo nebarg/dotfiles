@@ -1,0 +1,53 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+vicmd_symbol = "[❮](bold green)"
+
+[cmd_duration]
+min_time = 2000
+format = "took [$duration](bold yellow) "
+
+[directory]
+truncation_length = 4
+truncate_to_repo = true
+read_only = "🔒"
+format = "[$path](bold cyan)[$read_only]() "
+disabled = false
+
+[git_branch]
+disabled = false
+
+[git_state]
+disabled = false
+
+[git_status]
+disabled = false
+
+[hostname]
+ssh_only = true
+format =  "🤖 on [$hostname](bold red) ⟫ "
+disabled = false
+
+[line_break]
+disabled = false
+
+[aws]
+disabled = true
+
+[php]
+disabled = true
+
+[nodejs]
+disabled = true
+
+[username]
+disabled = true
+
+[time]
+disabled = true
+
+[sudo]
+disabled = true

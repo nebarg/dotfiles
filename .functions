@@ -1,0 +1,21 @@
+function tinker()
+{
+  if [ -z "$1" ]
+    then
+       php artisan tinker
+    else
+       php artisan tinker --execute="dd($1);"
+  fi
+}
+
+function db {
+    if [ "$1" = "refresh" ]; then
+        mysql -uroot -e "drop database $2; create database $2"
+    elif [ "$1" = "create" ]; then
+        mysql -uroot -e "create database $2"
+    elif [ "$1" = "drop" ]; then
+        mysql -uroot -e "drop database $2"
+    elif [ "$1" = "list" ]; then
+        mysql -uroot -e "show databases" | perl -p -e's/\|| *//g'
+    fi
+}
