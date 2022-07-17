@@ -77,5 +77,3 @@ mas 'Spark', id: 1176895641
 #mas 'Things', id: 904280696
 mas 'Trello', id: 1278508951
 #mas 'Twitter', id: 1482454543
-
-brew cleanup
