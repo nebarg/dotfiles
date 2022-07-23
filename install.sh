@@ -23,7 +23,7 @@ rm -rf $HOME/.zshrc
 ln -s $HOME/.dotfiles/.zshrc $HOME/.zshrc
 
 # Install Starship
-/bin/bash -c "$(curl -fsSL https://starship.rs/install.sh)"
+/bin/sh -c "$(curl -fsSL https://starship.rs/install.sh)"
 # Symlink Starship
 rm -rf $HOME/.config/startship.toml
 ln -s $HOME/.dotfiles/.starship.toml $HOME/.config/startship.toml
@@ -61,13 +61,7 @@ echo -e "Create new SSH Key? (y/n)"
 read -p "Answer: " reply
 if [[ $reply =~ ^[Yy]$ ]]
 then
-    echo -e "Enter email address"
-    read -p "Answer: " email
-
-    if [[ $email != "" ]]
-    then 
-      source gens.sh $email
-    fi
+    source gens.sh
 fi
 
 # Set some mac os defaults and reload terminal
