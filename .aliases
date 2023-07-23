@@ -3,13 +3,11 @@ alias copyssh="pbcopy < $HOME/.ssh/id_ed25519.pub"
 alias storm='open -a /Applications/PhpStorm.app "`pwd`"'
 alias code='open -a "/Applications/Visual Studio Code.app" "`pwd`"'
 
-alias php81="brew unlink php@8.0 && brew unlink php@7.4 && brew link --overwrite --force php"
-alias php8="brew unlink php && brew unlink php@7.4 && brew link --overwrite --force php@8.0"
-#alias php7="brew unlink php && brew unlink php@8.0 && brew link --overwrite --force php@7.4"
-
 alias phpunit='vendor/bin/phpunit'
+alias pest='vendor/bin/pest'
 alias pd='phpunit --testdox'
 alias c='composer'
+alias a='php artisan'
 
 alias g='git'
 alias ga='git add'
@@ -24,5 +22,3 @@ alias gbin='git reset --hard;git clean -df'
 alias push='git push'
 alias gll='git log --oneline --decorate'
 alias glg='git log --graph --oneline --decorate'
-
-alias expose="/opt/homebrew/Cellar/php@8.0/8.0.21/bin/php ~/.composer/vendor/bin/expose"
