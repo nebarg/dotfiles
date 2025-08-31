@@ -6,10 +6,6 @@ success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 vicmd_symbol = "[❮](bold green)"
 
-[cmd_duration]
-min_time = 2000
-format = "took [$duration](bold yellow) "
-
 [directory]
 truncation_length = 4
 truncate_to_repo = true
