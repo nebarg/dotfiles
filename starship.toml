@@ -13,6 +13,7 @@ $php\
 [](fg:blue bg:green)\
 $nodejs\
 [](fg:green)\
+$git_state\
 $cmd_duration\
 $line_break\
 $character"""
@@ -23,7 +24,7 @@ palette = 'catppuccin_mocha'
 style = "bg:peach fg:crust"
 format = "[ $path ]($style)"
 truncation_length = 3
-truncation_symbol = "…"
+truncation_symbol = ""
 
 [directory.substitutions]
 "Documents" = "󰈙 "
@@ -42,13 +43,16 @@ format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 style = "bg:yellow"
 format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
+[git_state]
+format = '[ ($state( $progress_current/$progress_total))]($style)'
+
 [php]
 symbol = ""
 style = "bg:blue"
 format = '[[ $symbol( $version) ](fg:crust bg:blue)]($style)'
 
 [nodejs]
-symbol = ""
+symbol = "󰎙"
 style = "bg:green"
 format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
 
@@ -61,7 +65,7 @@ format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
 disabled = false
 time_format = "%R"
 style = "bg:red"
-format = '[[  $time ](fg:crust bg:red)]($style)'
+format = '[[ $time ](fg:crust bg:red)]($style)'
 
 [line_break]
 disabled = false
@@ -76,12 +80,12 @@ vimcmd_replace_symbol = '[❮](bold fg:lavender)'
 vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
 [cmd_duration]
-show_milliseconds = true
-format = " $duration "
+show_milliseconds = false
+format = " 󰢕 $duration"
 style = "bg:lavender"
-disabled = true
-show_notifications = true
-min_time_to_notify = 45000
+disabled = false
+show_notifications = false
+min_time_to_notify = 5_000
 
 [palettes.catppuccin_mocha]
 rosewater = "#f5e0dc"
