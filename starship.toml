@@ -1,49 +1,112 @@
-# Inserts a blank line between shell prompts
-add_newline = false
+"$schema" = 'https://starship.rs/config-schema.json'
 
-[character]
-success_symbol = "[❯](bold green)"
-error_symbol = "[❯](bold red)"
-vicmd_symbol = "[❮](bold green)"
+format = """
+[](red)\
+$time\
+[](bg:peach fg:red)\
+$directory\
+[](bg:yellow fg:peach)\
+$git_branch\
+$git_status\
+[](fg:yellow bg:blue)\
+$php\
+[](fg:blue bg:green)\
+$nodejs\
+[](fg:green)\
+$cmd_duration\
+$line_break\
+$character"""
+
+palette = 'catppuccin_mocha'
 
 [directory]
-truncation_length = 4
-truncate_to_repo = true
-read_only = "🔒"
-format = "[$path](bold cyan)[$read_only]() "
-disabled = false
+style = "bg:peach fg:crust"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…"
+
+[directory.substitutions]
+"Documents" = "󰈙 "
+"Downloads" = " "
+"Music" = "󰝚 "
+"Pictures" = " "
+"Developer" = "󰲋 "
+"Code" = "󰲋 "
 
 [git_branch]
-disabled = false
-
-[git_state]
-disabled = false
+symbol = ""
+style = "bg:yellow"
+format = '[[ $symbol $branch ](fg:crust bg:yellow)]($style)'
 
 [git_status]
-disabled = false
+style = "bg:yellow"
+format = '[[($all_status$ahead_behind )](fg:crust bg:yellow)]($style)'
 
-[hostname]
-ssh_only = true
-format =  "🤖 on [$hostname](bold red) ⟫ "
+[php]
+symbol = ""
+style = "bg:blue"
+format = '[[ $symbol( $version) ](fg:crust bg:blue)]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:green"
+format = '[[ $symbol( $version) ](fg:crust bg:green)]($style)'
+
+[docker_context]
+symbol = ""
+style = "bg:sapphire"
+format = '[[ $symbol( $context) ](fg:crust bg:sapphire)]($style)'
+
+[time]
 disabled = false
+time_format = "%R"
+style = "bg:red"
+format = '[[  $time ](fg:crust bg:red)]($style)'
 
 [line_break]
 disabled = false
 
-[aws]
-disabled = true
+[character]
+disabled = false
+success_symbol = '[❯](bold fg:green)'
+error_symbol = '[❯](bold fg:red)'
+vimcmd_symbol = '[❮](bold fg:green)'
+vimcmd_replace_one_symbol = '[❮](bold fg:lavender)'
+vimcmd_replace_symbol = '[❮](bold fg:lavender)'
+vimcmd_visual_symbol = '[❮](bold fg:yellow)'
 
-[php]
+[cmd_duration]
+show_milliseconds = true
+format = " $duration "
+style = "bg:lavender"
 disabled = true
+show_notifications = true
+min_time_to_notify = 45000
 
-[nodejs]
-disabled = true
-
-[username]
-disabled = true
-
-[time]
-disabled = true
-
-[sudo]
-disabled = true
+[palettes.catppuccin_mocha]
+rosewater = "#f5e0dc"
+flamingo = "#f2cdcd"
+pink = "#f5c2e7"
+mauve = "#cba6f7"
+red = "#f38ba8"
+maroon = "#eba0ac"
+peach = "#fab387"
+yellow = "#f9e2af"
+green = "#a6e3a1"
+teal = "#94e2d5"
+sky = "#89dceb"
+sapphire = "#74c7ec"
+blue = "#89b4fa"
+lavender = "#b4befe"
+text = "#cdd6f4"
+subtext1 = "#bac2de"
+subtext0 = "#a6adc8"
+overlay2 = "#9399b2"
+overlay1 = "#7f849c"
+overlay0 = "#6c7086"
+surface2 = "#585b70"
+surface1 = "#45475a"
+surface0 = "#313244"
+base = "#1e1e2e"
+mantle = "#181825"
+crust = "#11111b"
