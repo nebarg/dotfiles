@@ -105,5 +105,7 @@ export PATH="$HOME/.composer/vendor/bin:$PATH"
 export PATH=/usr/local/bin:$PATH
 export PATH=/opt/homebrew/bin:$PATH
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH" 
+export STARSHIP_CONFIG=~/.dotfiles/starship.toml
+export MACKUP_CONFIG=~/.dotfiles/.mackup.cfg
 
 eval "$(starship init zsh)"
